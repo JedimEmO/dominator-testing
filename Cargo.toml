@@ -1,0 +1,33 @@
+[package]
+name = "dominator-testing"
+version = "0.1.0"
+edition = "2021"
+authors = ["Mathias Myrland <jedimemo@gmail.com>"]
+keywords = ["reactive", "signal", "frp"]
+categories = ["gui", "web-programming", "wasm"]
+repository = "https://github.com/JedimEmO/dominator-testing"
+homepage = "https://github.com/JedimEmO/dominator-testing"
+license = "MIT"
+description = "Helpers for testing dominator UIs with wasm-bindgen-test"
+
+[[test]]
+name = "browser_test"
+path = "tests/test.rs"
+
+[dependencies]
+dominator = "^0.5.36"
+thiserror = "^1.0.63"
+web-sys = { version = "^0.3.69", features = ["HtmlCollection", "NodeList", "HtmlElement", "HtmlButtonElement"] }
+wasm-bindgen = "^0.2.92"
+wasm-bindgen-test = "^0.3.42"
+wasm-bindgen-futures = "^0.4.42"
+web-time = "^1.1.0"
+js-sys = "^0.3.69"
+
+[dev-dependencies]
+num-traits = "0.2.19"
+dominator = { version = "0.5.34" }
+futures-signals = { version = "0.3.33" }
+wasm-bindgen-test = { version = "0.3.42" }
+wasm-bindgen-futures = { version = "0.4.42" }
+web-sys = { version = "0.3.69" }
