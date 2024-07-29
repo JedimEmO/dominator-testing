@@ -16,8 +16,10 @@ path = "tests/test.rs"
 
 [dependencies]
 dominator = "^0.5.36"
+futures-signals = "^0.3.34"
+gloo-timers = { version = "^0.3.0", features = ["futures"] }
 thiserror = "^1.0.63"
-web-sys = { version = "^0.3.69", features = ["HtmlCollection", "NodeList", "HtmlElement", "HtmlButtonElement"] }
+web-sys = { version = "^0.3.69", features = ["HtmlCollection", "NodeList", "HtmlElement", "HtmlButtonElement", "InputEvent", "InputEventInit"] }
 wasm-bindgen = "^0.2.92"
 wasm-bindgen-test = "^0.3.42"
 wasm-bindgen-futures = "^0.4.42"

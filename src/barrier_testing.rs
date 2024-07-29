@@ -1,4 +1,4 @@
-use crate::DominatorTestingError;
+use crate::{async_yield, DominatorTestingError};
 use std::fmt::{Debug, Formatter};
 use std::time::Duration;
 use web_sys::NodeList;
@@ -66,7 +66,7 @@ pub async fn barrier(
     let started_at = web_time::Instant::now();
 
     loop {
-        crate::async_yield().await;
+        async_yield().await;
 
         if expr() {
             break Ok(());
