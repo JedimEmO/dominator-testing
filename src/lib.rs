@@ -1,7 +1,9 @@
 pub mod barrier_testing;
 pub mod conversion;
 pub mod element_utilities;
+pub mod signal_testing;
 
+use std::time::Duration;
 use dominator::{body, Dom};
 use thiserror::Error;
 use wasm_bindgen::{JsCast, JsValue};
@@ -28,9 +30,7 @@ pub fn mount_test_dom(dom: Dom) {
 /// Utility for yielding time back to the browser.
 /// This is necessary because of the single threaded nature of the browser environment
 pub async fn async_yield() {
-    JsFuture::from(js_sys::Promise::resolve(&JsValue::null()))
-        .await
-        .unwrap();
+    gloo_timers::future::sleep(Duration::from_millis(0)).await;
 }
 
 #[derive(Error, Debug)]
